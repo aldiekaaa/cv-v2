@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "flowbite": "^1.6.5",
+    "typed.js": "^2.0.12"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.6"
+  }
+}

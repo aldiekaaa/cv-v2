@@ -1,0 +1,402 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@layer utilities {
+    .content-auto {
+        content-visibility: auto;
+    }
+}
+
+.home {
+    background: linear-gradient(270deg, #ffffff, #794e9b, #31e4ee);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -o-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+
+@keyframes bg-fade-1 {
+    0% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bg-fade-2 {
+    0% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bg-fade-1 {
+    0% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bg-fade-2 {
+    0% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.show {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .navicon {
+        width: 1.125em;
+        height: .125em;
+    }
+
+    .navicon::before,
+    .navicon::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: all .2s ease-out;
+        content: '';
+        background: rgb(99, 102, 241);
+    }
+
+    .navicon::before {
+        top: 5px;
+    }
+
+    .navicon::after {
+        top: -5px;
+    }
+
+    .menu-btn:not(:checked)~.menu {
+        display: none;
+    }
+
+    .menu-btn:checked~.menu {
+        display: block;
+    }
+
+    .menu-btn:checked~.menu-icon .navicon {
+        background: transparent;
+    }
+
+    .menu-btn:checked~.menu-icon .navicon::before {
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn:checked~.menu-icon .navicon::after {
+        transform: rotate(45deg);
+    }
+
+    .menu-btn:checked~.menu-icon .navicon::before,
+    .menu-btn:checked~.menu-icon .navicon::after {
+        top: 0;
+    }
+}
+
+.font-fav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.text-primary {
+    color: #332FD0;
+}
+
+.bg-primary {
+    background-color: #332FD0;
+}
+
+.border-primary {
+    border-color: #332FD0;
+}
+
+.font-fav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text-primary {
+    color: #332FD0;
+}
+
+.bg-primary {
+    background-color: #332FD0;
+}
+
+.border-primary {
+    border-color: #332FD0;
+}
+
+@keyframes blink {
+    0% {
+        background-color: #ccc;
+    }
+
+    49% {
+        background-color: #ccc;
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    99% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #ccc;
+    }
+}
+
+.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+
+.typed-text {
+    font-weight: normal;
+}
+
+.cursor.typing {
+    animation: none;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top: 50vh;
+}
+
+.context h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+
+.area {
+    height: 650px;
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+
+}
+
+.circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        border-radius: 999;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        border-radius: 50%;
+    }
+
+}
+
+#navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    transition: background-color 0.5s ease;
+}
+
+@keyframes move {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.scrolling-list {
+    animation: move 3s linear infinite; /* Sesuaikan kecepatan animasi di sini */
+}
