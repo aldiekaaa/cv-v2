@@ -67,9 +67,9 @@
         </nav>
     </header>
 
-    <img class="fixed min-h-screen -z-30" src="/assets/bgjb.png" alt="" srcset="">
-    <section id="home" class="container bg mx-auto h-[450px] md:pt-32 pt-16">
-        <div class="flex md:flex-row flex-col justify-between items-center">
+    <img class="fixed h-screen -z-30" src="/assets/bgjb.png" alt="" srcset="">
+    <section id="home" class="container bg mx-auto">
+        <div class="flex md:flex-row flex-col justify-between h-screen items-center">
             <div class="order-last md:order-first">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:ml-20">
@@ -106,18 +106,18 @@
                             </div>
                         </li>
                         <li class="hover:scale-125 duration-150" data-aos="fade-right" data-aos-duration="1000"><a
-                                class="text-xl py-4 px-5  text-white" href="https://www.instagram.com/_aldieka332"
+                                class="text-xl text-white" href="https://www.instagram.com/_aldieka332"
                                 target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                         <li class="hover:scale-125 duration-150" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-delay="300"><a class="text-xl py-4 px-5  text-white"
+                            data-aos-delay="300"><a class="text-xl text-white"
                                 href="https://www.facebook.com/cheytac567" target="_blank"><i
                                     class="fa-brands fa-facebook"></i></a></li>
                         <li class="hover:scale-125 duration-150" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-delay="600"><a class="text-xl py-4 px-5  text-white"
+                            data-aos-delay="600"><a class="text-xl text-white"
                                 href="https://www.github.com/aldiekaaa" target="_blank"><i
                                     class="fa-brands fa-github"></i></a></li>
                         <li class="hover:scale-125 duration-150" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-delay="900"><a class="text-xl py-4 px-5  text-white"
+                            data-aos-delay="900"><a class="text-xl text-white"
                                 href="https://id.linkedin.com/in/aldiekaaa" target="_blank"><i
                                     class="fa-brands fa-linkedin-in"></i></a></li>
                     </ul>
@@ -127,7 +127,7 @@
         </div>
     </section>
 
-    <section class="md:mt-72 mt-24" id="about">
+    <section class="" id="about">
         <div class="flex flex-row items-center bg-white h-screen py-10">
             <div class="container mx-auto">
                 <h1 class="text-center font-poppins font-semibold text-3xl">About Me</h1>
@@ -207,8 +207,8 @@
     </section>
 
 
-    <section class="w-full bg-white h-screen py-14" id="blog">
-        <div class="container mx-auto font-poppins">
+    <section class="w-full bg-white items-center" id="blog">
+        <div class="container py-20 mx-auto font-poppins">
             <div class="">
                 <h1 class="text-center font-poppins font-semibold text-3xl">Blog</h1>
                 <div class="w-16 mx-auto overflow-hidden scroller" data-direction="left">
@@ -307,7 +307,7 @@
         </div>
     </section>
 
-    <section class="bg-neutral-800">
+    <section class="bg-neutral-800 h-[600px] flex flex-row items-center" id="contact">
         <div class="container mx-auto py-20 font-poppins">
             <h1 class="text-center font-poppins font-semibold text-3xl text-white">Contact</h1>
             <div class="w-16 mx-auto overflow-hidden scroller" data-direction="left">
@@ -374,7 +374,9 @@
                                 class="absolute text-sm bg-neutral-800 px-2 text-gray-500 duration-300 transform -translate-y-5 scale-75 top-3 left-4 z-10 origin-[0] peer-focus:scale-75 peer-placeholder-shown:scale-110 peer-focus:left-4 peer-focus:text-blue-600 peer-placeholder-shown:translate-y-0  peer-focus:-translate-y-5">Type
                                 Message Here</label>
                         </div>
-                        <button class="text-gray-900 bg-white py-2 w-48 hover:bg-transparent border hover:text-white hover:border hover:border-white duration-300" type="submit">Send Message</button>
+                        <button
+                            class="text-gray-900 bg-white py-2 w-48 hover:bg-transparent border hover:text-white hover:border hover:border-white duration-300"
+                            type="submit">Send Message</button>
                     </div>
                 </form>
             </div>
@@ -400,33 +402,41 @@
     <script>
         AOS.init();
 
-        // Mendapatkan referensi elemen navbar
-        var navbar = document.getElementById('navbar');
+        document.addEventListener("DOMContentLoaded", function () {
+                    // Mendapatkan referensi elemen navbar
+                    var navbar = document.getElementById('navbar');
+                    var homeSection = document.getElementById('home');
+                    var aboutSection = document.getElementById('about');
+                    var portfolioSection = document.getElementById("portfolio");
+                    var blogSection = document.getElementById("blog");
+                    var contactSection = document.getElementById("contact");
+                    // Menambahkan event listener untuk peristiwa scroll
+                    window.addEventListener('scroll', function () {
+                            // Mendapatkan nilai scroll
+                            var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
-        // Menambahkan event listener untuk peristiwa scroll
-        window.addEventListener('scroll', function () {
-            // Mendapatkan nilai scroll
-            var scrollY = window.scrollY;
+                            // Menggunakan struktur if-else untuk menentukan kelas yang harus ditambahkan
+                            if (scrollPosition >= blogSection.offsetTop) {
+                                navbar.classList.remove('bg-white', 'bg-opacity-10', 'text-white');
+                                navbar.classList.add('bg-gray-500', 'bg-opacity-10', 'backdrop-blur-sm',
+                                    'text-gray-700');
+                            } else if (scrollPosition >= portfolioSection.offsetTop) {
+                                navbar.classList.remove('bg-gray-500', 'text-gray-700', 'py-5');
+                                navbar.classList.add('bg-white', 'bg-opacity-10', 'backdrop-blur-sm', 'text-white');
+                            } else if (scrollPosition >= aboutSection.offsetTop) {
+                                navbar.classList.remove('bg-white', 'bg-opacity-10', 'text-white');
+                                navbar.classList.add('bg-gray-500', 'bg-opacity-10', 'backdrop-blur-sm',
+                                    'text-gray-700');
 
-            // Menggunakan struktur if-else untuk menentukan kelas yang harus ditambahkan
-            if (scrollY >= 2800) {
-                navbar.classList.remove('bg-white', 'bg-opacity-10', 'text-white');
-                navbar.classList.add('bg-gray-500', 'bg-opacity-10', 'backdrop-blur-sm', 'text-gray-700');
-            } else if (scrollY >= 1400) {
-                navbar.classList.remove('bg-gray-500', 'text-gray-700', 'py-5');
-                navbar.classList.add('bg-white', 'bg-opacity-10', 'backdrop-blur-sm', 'text-white');
-            } else if (scrollY >= 720) {
-                navbar.classList.remove('bg-white', 'bg-opacity-10', 'text-white');
-                navbar.classList.add('bg-gray-500', 'bg-opacity-10', 'backdrop-blur-sm', 'text-gray-700');
-            } else if (scrollY >= 100) {
-                navbar.classList.remove('bg-gray-500', 'text-gray-700', 'py-5');
-                navbar.classList.add('bg-white', 'bg-opacity-10', 'backdrop-blur-sm', 'text-white');
-            } else {
-                // Kondisi jika di atas 100, tapi belum mencapai 400
-                navbar.classList.remove('bg-gray-500', 'bg-white');
-                navbar.classList.add('py-4', 'text-white');
-            }
-        });
+                            } else if(scrollY >= 100){
+                                navbar.classList.remove('bg-white', 'bg-opacity-10', 'backdrop-blur-sm', 'text-white', 'text-gray-700');
+                                navbar.classList.add('bg-white', 'bg-opacity-10', 'text-white');
+                            } else {
+                                // Kondisi jika di atas 100, tapi belum mencapai 400
+                                navbar.classList.remove('bg-white', 'bg-opacity-10','bg-gray-500', 'backdrop-blur-sm');
+                            }
+                        });
+                    });
     </script>
     <script src="/app.js"></script>
 </body>
