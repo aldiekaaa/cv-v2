@@ -94,28 +94,3 @@ $(function () {
     });
 });
 
-const button = document.querySelector('#menu-button');
-const menu = document.querySelector('#menu');
-
-
-button.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-});
-
-// Scroll Top Button
-var btn = $('#button');
-
-$(window).scroll(function () {
-    if ($(window).scrollTop() > 300) {
-        btn.addClass('show');
-    } else {
-        btn.removeClass('show');
-    }
-});
-
-btn.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: 0
-    }, '300');
-});

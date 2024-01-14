@@ -400,7 +400,6 @@ body {
 .scrolling-list {
     animation: move 3s linear infinite; /* Sesuaikan kecepatan animasi di sini */
 }
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .blog::-webkit-scrollbar {
     display: none;

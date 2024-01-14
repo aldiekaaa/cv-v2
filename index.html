@@ -34,8 +34,8 @@
                     href="#home">ALDIEKA</a>
             </div>
 
-            <input class="menu-btn hidden" type="checkbox" id="menu-btn">
-            <label class="menu-icon block cursor-pointer md:hidden px-2 relative select-none" for="menu-btn">
+            <input class="menu-btn hidden px-3 py-3" type="checkbox" id="menu-btn">
+            <label class="menu-icon block cursor-pointer md:hidden p-3 relative select-none" for="menu-btn">
                 <span class="navicon bg-indigo-500 flex items-center relative"></span>
             </label>
 
@@ -66,13 +66,13 @@
 
     <img class="fixed h-screen w-full -z-30" src="/assets/bgjb.png" alt="" srcset="">
     <section id="home" class="container bg mx-auto">
-        <div class="flex md:flex-row flex-col justify-between h-screen items-center">
+        <div class="flex md:flex-row flex-col justify-between h-screen items-center pb-20 md:pb-0">
             <div class="order-last md:order-first">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:ml-20">
                         <h5 class="text-white md:text font-fav text-center md:text-left">Hi There, i'm</h5>
                         <h1
-                            class="lg:text-5xl text-2xl font-bold font-fav h-14 text-transparent text-white text-center md:text-left uppercase">
+                            class="lg:text-5xl text-2xl font-bold font-fav h-14 text-white text-center md:text-left uppercase">
                             Reyn<span class="text-violet-700">aldi Eka</span></h1>
                         <div class="role md:mt-5 ml-10 md:ml-0">
                             <a class="text-white font-fav font-medium">> Im<span
@@ -89,16 +89,16 @@
                     </div>
                 </div>
             </div>
-            <div class="order-first md:order-last flex">
-                <img class="lg:w-[350px] w-[200px] mr-14" data-aos="fade-left" data-aos-duration="1500"
+            <div class="md:flex">
+                <img class="md:w-[350px] md:h-[470px] w-[200px] mr-14 mt-14 md:mt-0" data-aos="fade-left" data-aos-duration="1500"
                     src="/assets/ava-fav.png" alt="">
-                <div class="order-last w-9 pt-10 md:pt-0">
+                <div class="order-last mt-10 md:mt-20">
                     <ul class="flex md:flex-col gap-5 flex-row justify-center text-center items-center">
                         <li class="pb-10">
-                            <h5 class="text-white rotate-90 w-24 text-sm font-fav">Follow Me</h5>
+                            <h5 class="text-white hidden md:block rotate-90 w-24 text-sm font-fav">Follow Me</h5>
                         </li>
                         <li>
-                            <div class="w-1 h-32 rounded-full bg-white">
+                            <div class="md:block hidden w-1 h-32 rounded-full bg-white">
 
                             </div>
                         </li>
@@ -120,12 +120,11 @@
                     </ul>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section class="" id="about">
-        <div class="flex flex-row items-center bg-white h-screen py-10">
+        <div class="flex flex-row items-center bg-white h-screen pt-20 md:py-10">
             <div class="container mx-auto">
                 <h1 class="text-center font-poppins font-semibold text-3xl">About Me</h1>
                 <div class="w-16 mx-auto overflow-hidden scroller" data-direction="left">
@@ -134,7 +133,7 @@
                         <li class="bg-violet-700 h-[5px] w-5 rounded-full"></li>
                     </ul>
                 </div>
-                <div class="flex justify-between gap-10 pt-10 items-center">
+                <div class="md:flex justify-between gap-10 pt-10 items-center">
                     <div>
                         <div class="relative">
                             <img class="absolute -top-10 -right-10 grayscale hover:grayscale-0 duration-300"
@@ -427,7 +426,7 @@
 
                             } else if(scrollY >= 100){
                                 navbar.classList.remove('bg-white', 'bg-opacity-10', 'backdrop-blur-sm', 'text-white', 'text-gray-700');
-                                navbar.classList.add('bg-white', 'bg-opacity-10', 'text-white');
+                                navbar.classList.add('bg-white', 'bg-opacity-10', 'text-white', 'backdrop-blur-sm');
                             } else {
                                 // Kondisi jika di atas 100, tapi belum mencapai 400
                                 navbar.classList.remove('bg-white', 'bg-opacity-10','bg-gray-500', 'backdrop-blur-sm');
